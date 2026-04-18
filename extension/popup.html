@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Study Guard</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 260px;
+      background: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      padding: 16px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #ff3300;
+      text-transform: uppercase;
+    }
+
+    a.settings-link {
+      color: #444;
+      font-size: 18px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+    a.settings-link:hover { color: #ff3300; }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1a1a1a;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+    }
+
+    .row-label { font-size: 13px; color: #aaa; }
+    .row-sub   { font-size: 11px; color: #444; margin-top: 2px; }
+
+    .toggle {
+      position: relative;
+      width: 40px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+    .toggle input { display: none; }
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: #2a2a2a;
+      border-radius: 22px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .slider:before {
+      content: "";
+      position: absolute;
+      width: 16px; height: 16px;
+      left: 3px; top: 3px;
+      background: #555;
+      border-radius: 50%;
+      transition: transform 0.2s, background 0.2s;
+    }
+    input:checked + .slider { background: #ff3300; }
+    input:checked + .slider:before { transform: translateX(18px); background: white; }
+
+    .row-left { flex: 1; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🛡 Study Guard</h1>
+    <a class="settings-link" id="settingsLink" title="Settings">⚙</a>
+  </header>
+
+  <div class="row">
+    <div class="row-left">
+      <div class="row-label">Guard active</div>
+      <div class="row-sub">Redirects blocked sites</div>
+    </div>
+    <label class="toggle">
+      <input type="checkbox" id="enabledToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="row">
+    <div class="row-left">
+      <div class="row-label">⚡ Instant redirect</div>
+      <div class="row-sub">Skip the block page — jump straight to redirect</div>
+    </div>
+    <label class="toggle">
+      <input type="checkbox" id="instantToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="row">
+    <div class="row-left">
+      <div class="row-label">🔊 Max volume alarm</div>
+      <div class="row-sub">Ear-splitting siren on block page</div>
+    </div>
+    <label class="toggle">
+      <input type="checkbox" id="alarmToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

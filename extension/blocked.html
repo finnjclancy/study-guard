@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blocked — Study Guard</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0a0a;
+      color: white;
+      font-family: 'Arial Black', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      user-select: none;
+    }
+    .flash {
+      position: fixed; inset: 0; pointer-events: none;
+      animation: flash 0.35s ease-in-out infinite alternate;
+    }
+    @keyframes flash {
+      from { background: rgba(255,30,0,0.22); }
+      to   { background: rgba(255,30,0,0.02); }
+    }
+    .icon { font-size: 96px; margin-bottom: 20px; animation: shake 0.1s infinite; }
+    @keyframes shake {
+      0%  { transform: rotate(-5deg) scale(1.05); }
+      50% { transform: rotate(5deg)  scale(0.95); }
+      100%{ transform: rotate(-5deg) scale(1.05); }
+    }
+    h1 {
+      font-size: 52px; letter-spacing: 8px; color: #ff2200;
+      text-shadow: 0 0 40px #ff2200, 0 0 80px #ff0000;
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+    .site {
+      font-size: 15px; color: #555; margin-bottom: 10px;
+      font-family: monospace; max-width: 500px;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .message { font-size: 18px; color: #888; margin-bottom: 36px; font-family: Arial, sans-serif; font-weight: normal; }
+    .countdown { font-size: 14px; color: #444; letter-spacing: 2px; font-family: Arial, sans-serif; }
+    .countdown span { color: #ff4400; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="flash"></div>
+  <div class="icon">🚨</div>
+  <h1>Blocked</h1>
+  <div class="site" id="siteName"></div>
+  <p class="message">Get back to work.</p>
+  <div class="countdown">Redirecting in <span id="timer">3</span>s…</div>
+
+  <script src="blocked.js"></script>
+</body>
+</html>
