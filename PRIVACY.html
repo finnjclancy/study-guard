@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Guard — Privacy Policy</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px;
+      color: #222;
+      line-height: 1.65;
+      background: #fafafa;
+    }
+    h1 { font-size: 32px; border-bottom: 2px solid #ff3300; padding-bottom: 12px; }
+    h2 { margin-top: 36px; font-size: 20px; color: #ff3300; }
+    .tag { color: #888; font-size: 14px; margin-top: -8px; }
+    code { background: #eee; padding: 2px 6px; border-radius: 3px; font-size: 90%; }
+    a { color: #ff3300; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 40px 0; }
+    .footer { color: #888; font-size: 13px; text-align: center; }
+  </style>
+</head>
+<body>
+  <h1>🛡 Study Guard — Privacy Policy</h1>
+  <p class="tag">Last updated: 18 April 2026</p>
+
+  <h2>Summary</h2>
+  <p>
+    Study Guard is a Chrome extension that helps you focus by redirecting distracting websites to a destination you choose.
+    <strong>We do not collect, transmit, sell, or share any of your data.</strong> Everything the extension does happens locally in your browser.
+  </p>
+
+  <h2>What data the extension accesses</h2>
+  <ul>
+    <li><strong>The URL of the tab you are viewing.</strong> The extension reads the URL of each tab you open so it can check whether the site is on your allowed list. This check happens entirely on your device. URLs are never stored, logged, or sent anywhere.</li>
+    <li><strong>Your settings.</strong> Your allowed-sites list, redirect URL, and feature toggles are saved using Chrome's built-in <code>chrome.storage.sync</code> API. This data stays in your Chrome profile and, if you have Chrome sync enabled, is synced by Google across your own devices under your own Google account. The developer never has access to it.</li>
+  </ul>
+
+  <h2>What data the extension does NOT collect</h2>
+  <ul>
+    <li>No browsing history</li>
+    <li>No personal information</li>
+    <li>No analytics, telemetry, or crash reports</li>
+    <li>No cookies</li>
+    <li>No advertising identifiers</li>
+    <li>No third-party tracking</li>
+  </ul>
+
+  <h2>Permissions and why they are needed</h2>
+  <ul>
+    <li><code>tabs</code> — to detect when you navigate to a new URL so the guard can check it against your allowed list.</li>
+    <li><code>storage</code> — to save your whitelist, redirect destination, and toggle settings locally.</li>
+    <li><code>host_permissions: &lt;all_urls&gt;</code> — required so the redirect works on any site you might navigate to.</li>
+  </ul>
+
+  <h2>Third parties</h2>
+  <p>
+    Study Guard has no backend server and does not communicate with any third-party service. No data leaves your browser.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    If this policy is ever updated, the new version will be published at this same URL with an updated date at the top. Material changes will also be reflected in the extension's Chrome Web Store listing.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions or concerns? Open an issue on the
+    <a href="https://github.com/finnjclancy/study-guard">project's GitHub repository</a>.
+  </p>
+
+  <hr>
+  <div class="footer">
+    Study Guard is an open-source focus tool. Source: <a href="https://github.com/finnjclancy/study-guard">github.com/finnjclancy/study-guard</a>
+  </div>
+</body>
+</html>
